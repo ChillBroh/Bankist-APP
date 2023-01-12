@@ -66,6 +66,7 @@ const inputClosePin = document.querySelector('.form__input--pin');
 //functions
 
 const displayMovements = (movements) => {
+  containerMovements.innerHTML = '';
   movements.forEach((mov, i) => {
     const type = mov > 0 ? 'deposit' : 'withdrawal';
 
@@ -82,3 +83,16 @@ const displayMovements = (movements) => {
 };
 
 displayMovements(account1.movements);
+
+const userNameCreator = function (accs) {
+  accs.forEach(function (acc) {
+    acc.userName = acc.owner
+      .toLowerCase()
+      .split(' ')
+      .map((name) => name[0])
+      .join('');
+  });
+};
+
+userNameCreator(accounts);
+console.log(accounts);
