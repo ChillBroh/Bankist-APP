@@ -86,7 +86,7 @@ displayMovements(account1.movements);
 
 const calcDisplayBalance = (movements) => {
   const total = movements.reduce((acc, mov) => acc + mov);
-  labelBalance.innerHTML = `${total} EUR`;
+  labelBalance.innerHTML = `${total} €`;
 };
 calcDisplayBalance(account1.movements);
 
